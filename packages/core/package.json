@@ -1,0 +1,25 @@
+{
+  "name": "@formcraft/core",
+  "version": "0.0.0-prototype",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "vite build --config ../../vite.library.config.ts && tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "zod": "4.5.4"
+  }
+}

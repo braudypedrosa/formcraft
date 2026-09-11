@@ -1,0 +1,13 @@
+{
+  "name": "@formcraft/playground",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@formcraft/core": "workspace:*",
+    "@formcraft/builder": "workspace:*",
+    "@formcraft/renderer": "workspace:*",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "lucide-react": "1.42.0"
+  }
+}

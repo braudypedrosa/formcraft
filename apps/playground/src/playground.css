@@ -1,0 +1,131 @@
+.preview-shell {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  min-height: 100vh;
+  background: #f5f4f2;
+  color: #61556a;
+  padding-bottom: 35px;
+}
+.preview-bar {
+  height: 75px;
+  background: white;
+  border-bottom: 1px solid #e7e1ed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+.preview-bar button,
+.preview-tools button {
+  font: inherit;
+  background: none;
+  border: 0;
+  color: #877595;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.preview-bar > span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #aa9db2;
+}
+.device-switch {
+  display: flex;
+  background: #f5f1f9;
+  border-radius: 7px;
+  padding: 4px;
+  gap: 3px;
+}
+.device-switch button {
+  padding: 7px 10px;
+  border-radius: 4px;
+}
+.device-switch button[aria-pressed="true"] {
+  background: white;
+  box-shadow: 0 1px 4px #4b355517;
+  color: #7551c7;
+}
+.preview-paper {
+  max-width: 570px;
+  box-sizing: border-box;
+  margin: 36px auto 20px;
+  background: white;
+  border: 1px solid #e9e1ed;
+  border-radius: 9px;
+  padding: 42px 44px;
+  transition: max-width 0.2s;
+}
+.preview-paper.mobile {
+  max-width: 375px;
+  padding: 30px 24px;
+}
+.preview-tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  font-size: 11px;
+  color: #9d8ba8;
+}
+.preview-tools label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.preview-tools input {
+  accent-color: #7551c7;
+}
+.preview-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #b0a1b9;
+  font-size: 10px;
+  margin-top: 20px;
+}
+.storage-warning {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 99;
+  background: #fff1da;
+  padding: 15px;
+  font: 13px sans-serif;
+}
+@media (max-width: 620px) {
+  .preview-bar {
+    padding: 0 17px;
+  }
+  .preview-bar > span {
+    display: none;
+  }
+  .preview-paper {
+    margin: 22px 16px;
+    padding: 32px 24px;
+  }
+  .preview-paper.mobile {
+    margin: 22px auto;
+    max-width: calc(100% - 32px);
+  }
+  .preview-tools {
+    gap: 14px;
+    font-size: 10px;
+  }
+  .preview-tools button {
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preview-paper {
+    transition: none;
+  }
+}
+

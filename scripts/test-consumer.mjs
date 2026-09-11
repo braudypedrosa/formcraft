@@ -1,0 +1,44 @@
+import { mkdtempSync, writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
+import { execFileSync } from 'node:child_process';
+import assert from 'node:assert/strict';
+const root = resolve('.');
+const target = mkdtempSync(join(tmpdir(), 'formcraft-consumer-'));
+const run = (cmd, args, cwd = target) => execFileSync(cmd, args, {cwd, stdio:'inherit'});
+const archive = join(target, 'archives'); mkdirSync(archive);
+for (const name of ['core','builder','renderer']) run('pnpm', ['pack', '--pack-destination', archive], join(root,'packages',name));
+const tar = name => `file:${join(archive, `formcraft-${name}-0.0.0-prototype.tgz`)}`;
+const manifest = {private:true,type:'module',dependencies:{'@formcraft/core':tar('core'),'@formcraft/renderer':tar('renderer'),react:'19.2.8','react-dom':'19.2.8'},devDependencies:{vite:'8.2.2',typescript:'7.0.2','@types/react':'19.2.18','@types/react-dom':'19.2.7'}};
+writeFileSync(join(target,'pnpm-workspace.yaml'), `packages: []
+overrides:
+  '@formcraft/core': '${tar('core')}'
+`);
+const save = () => writeFileSync(join(target,'package.json'),JSON.stringify(manifest,null,2)); save();
+writeFileSync(join(target,'index.html'),'<div id="root"></div><script type="module" src="/main.tsx"></script>');
+writeFileSync(join(target,'tsconfig.json'), JSON.stringify({compilerOptions:{target:'ES2022',module:'ESNext',moduleResolution:'bundler',jsx:'react-jsx',strict:true,skipLibCheck:true,noEmit:true},include:['main.tsx']}));
+writeFileSync(join(target,'main.tsx'), `import {createRoot} from 'react-dom/client';
+import {contactForm, createFieldRegistry, createCustomField} from '@formcraft/core';
+import {FormRenderer, useFormRenderer, SubmissionError} from '@formcraft/renderer';
+import '@formcraft/renderer/style.css';
+const registry=createFieldRegistry([{type:'test.code',version:1,label:'Code',validateConfig:()=>undefined,validate:()=>undefined}]);
+const schema={...contactForm(),fields:[createCustomField('test.code',registry)]};
+const adapters={ 'test.code':{version:1,Input:(props:import('@formcraft/renderer').CustomFieldInputProps)=><input id={props.id} ref={props.inputRef} value={String(props.value)} onChange={e=>props.onChange(e.target.value)}/>}};
+createRoot(document.getElementById('root')!).render(<FormRenderer registry={registry} adapters={adapters} schema={schema} onSubmit={async values=>{console.log(values)}}/>);`);
+run('pnpm',['install']);
+assert(!existsSync(join(target,'node_modules/@formcraft/builder')));
+run('pnpm',['exec','tsc']); run('pnpm',['exec','vite','build']);
+const rendererCode = readFileSync(join(target,'node_modules/@formcraft/renderer/dist/index.js'),'utf8');
+assert(!/@formcraft\/builder|@dnd-kit|zustand/.test(rendererCode));
+manifest.dependencies['@formcraft/builder']=tar('builder'); save();
+writeFileSync(join(target,'main.tsx'), `import {useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import {contactForm, createFieldRegistry, createCustomField} from '@formcraft/core';
+import {FormBuilder, useFormBuilder} from '@formcraft/builder';
+import {FormRenderer, useFormRenderer, SubmissionError} from '@formcraft/renderer';
+import '@formcraft/builder/style.css';
+import '@formcraft/renderer/style.css';
+function App(){const [schema,setSchema]=useState(contactForm); const editor=useFormBuilder(); const renderer=useFormRenderer(); return <main style={{padding:24,fontFamily:'sans-serif'}}><h1>Host application</h1><p>The editor is embedded in this page.</p><section style={{border:'1px solid #ccc',maxWidth:1000}}><FormBuilder ref={editor} value={schema} onChange={setSchema} style={{height:540}} /></section><h2>Independent renderer</h2><FormRenderer ref={renderer} schema={schema} onSubmit={async()=>{}} /></main>};
+createRoot(document.getElementById('root')!).render(<App/>);`);
+run('pnpm',['install']);run('pnpm',['exec','tsc']);run('pnpm',['exec','vite','build']);
+console.log(`Consumer checks passed. Standalone fixture: ${target}`);

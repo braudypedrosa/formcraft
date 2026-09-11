@@ -1,0 +1,13 @@
+node_modules/
+dist/
+playwright-report/
+test-results/
+
+# Local environment and generated artifacts
+.env
+.env.*
+!.env.example
+.DS_Store
+outputs/
+*.log
+*.tgz

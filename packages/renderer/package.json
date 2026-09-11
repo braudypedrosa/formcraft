@@ -1,0 +1,35 @@
+{
+  "name": "@formcraft/renderer",
+  "version": "0.0.0-prototype",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./style.css": {
+      "types": "./dist/style.d.ts",
+      "default": "./dist/style.css"
+    }
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "vite build --config ../../vite.library.config.ts && tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "react-hook-form": "7.87.0",
+    "@formcraft/core": "workspace:*",
+    "lucide-react": "1.42.0"
+  }
+}

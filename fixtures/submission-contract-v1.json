@@ -1,0 +1,1175 @@
+{
+  "contractVersion": 1,
+  "cases": [
+    {
+      "name": "text text",
+      "field": {
+        "id": "answer",
+        "type": "text",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "Example"
+    },
+    {
+      "name": "text required",
+      "field": {
+        "id": "answer",
+        "type": "text",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": " "
+    },
+    {
+      "name": "textarea text",
+      "field": {
+        "id": "answer",
+        "type": "textarea",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "Example"
+    },
+    {
+      "name": "textarea required",
+      "field": {
+        "id": "answer",
+        "type": "textarea",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": " "
+    },
+    {
+      "name": "phone text",
+      "field": {
+        "id": "answer",
+        "type": "phone",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "Example"
+    },
+    {
+      "name": "phone required",
+      "field": {
+        "id": "answer",
+        "type": "phone",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": " "
+    },
+    {
+      "name": "name text",
+      "field": {
+        "id": "answer",
+        "type": "name",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "Example"
+    },
+    {
+      "name": "name required",
+      "field": {
+        "id": "answer",
+        "type": "name",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": " "
+    },
+    {
+      "name": "address text",
+      "field": {
+        "id": "answer",
+        "type": "address",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "Example"
+    },
+    {
+      "name": "address required",
+      "field": {
+        "id": "answer",
+        "type": "address",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": " "
+    },
+    {
+      "name": "password text",
+      "field": {
+        "id": "answer",
+        "type": "password",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "Example"
+    },
+    {
+      "name": "password required",
+      "field": {
+        "id": "answer",
+        "type": "password",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": " "
+    },
+    {
+      "name": "hidden text",
+      "field": {
+        "id": "answer",
+        "type": "hidden",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "Example"
+    },
+    {
+      "name": "hidden required",
+      "field": {
+        "id": "answer",
+        "type": "hidden",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": " "
+    },
+    {
+      "name": "email valid",
+      "field": {
+        "id": "answer",
+        "type": "email",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "alex@example.com"
+    },
+    {
+      "name": "email invalid",
+      "field": {
+        "id": "answer",
+        "type": "email",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": "invalid_email",
+      "value": "alex@"
+    },
+    {
+      "name": "email optional missing",
+      "field": {
+        "id": "answer",
+        "type": "email",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null
+    },
+    {
+      "name": "email required empty",
+      "field": {
+        "id": "answer",
+        "type": "email",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": ""
+    },
+    {
+      "name": "number valid",
+      "field": {
+        "id": "answer",
+        "type": "number",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "-0.25"
+    },
+    {
+      "name": "number invalid",
+      "field": {
+        "id": "answer",
+        "type": "number",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": "invalid_number",
+      "value": "1e3"
+    },
+    {
+      "name": "number optional missing",
+      "field": {
+        "id": "answer",
+        "type": "number",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null
+    },
+    {
+      "name": "number required empty",
+      "field": {
+        "id": "answer",
+        "type": "number",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": ""
+    },
+    {
+      "name": "date valid",
+      "field": {
+        "id": "answer",
+        "type": "date",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "2024-02-29"
+    },
+    {
+      "name": "date invalid",
+      "field": {
+        "id": "answer",
+        "type": "date",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": "invalid_date",
+      "value": "2025-02-29"
+    },
+    {
+      "name": "date optional missing",
+      "field": {
+        "id": "answer",
+        "type": "date",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null
+    },
+    {
+      "name": "date required empty",
+      "field": {
+        "id": "answer",
+        "type": "date",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": ""
+    },
+    {
+      "name": "time valid",
+      "field": {
+        "id": "answer",
+        "type": "time",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "23:59"
+    },
+    {
+      "name": "time invalid",
+      "field": {
+        "id": "answer",
+        "type": "time",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": "invalid_time",
+      "value": "24:00"
+    },
+    {
+      "name": "time optional missing",
+      "field": {
+        "id": "answer",
+        "type": "time",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null
+    },
+    {
+      "name": "time required empty",
+      "field": {
+        "id": "answer",
+        "type": "time",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": ""
+    },
+    {
+      "name": "url valid",
+      "field": {
+        "id": "answer",
+        "type": "url",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "https://example.com/path"
+    },
+    {
+      "name": "url invalid",
+      "field": {
+        "id": "answer",
+        "type": "url",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": "invalid_url",
+      "value": "javascript:alert(1)"
+    },
+    {
+      "name": "url optional missing",
+      "field": {
+        "id": "answer",
+        "type": "url",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null
+    },
+    {
+      "name": "url required empty",
+      "field": {
+        "id": "answer",
+        "type": "url",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": ""
+    },
+    {
+      "name": "rating valid",
+      "field": {
+        "id": "answer",
+        "type": "rating",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": "4"
+    },
+    {
+      "name": "rating invalid",
+      "field": {
+        "id": "answer",
+        "type": "rating",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": "invalid_rating",
+      "value": "6"
+    },
+    {
+      "name": "rating optional missing",
+      "field": {
+        "id": "answer",
+        "type": "rating",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null
+    },
+    {
+      "name": "rating required empty",
+      "field": {
+        "id": "answer",
+        "type": "rating",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": ""
+    },
+    {
+      "name": "dropdown valid",
+      "field": {
+        "id": "answer",
+        "type": "dropdown",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": null,
+      "value": "first"
+    },
+    {
+      "name": "dropdown unavailable",
+      "field": {
+        "id": "answer",
+        "type": "dropdown",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": "invalid_dropdown",
+      "value": "other"
+    },
+    {
+      "name": "dropdown required",
+      "field": {
+        "id": "answer",
+        "type": "dropdown",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": "required",
+      "value": ""
+    },
+    {
+      "name": "radio valid",
+      "field": {
+        "id": "answer",
+        "type": "radio",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": null,
+      "value": "first"
+    },
+    {
+      "name": "radio unavailable",
+      "field": {
+        "id": "answer",
+        "type": "radio",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": "invalid_radio",
+      "value": "other"
+    },
+    {
+      "name": "radio required",
+      "field": {
+        "id": "answer",
+        "type": "radio",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": "required",
+      "value": ""
+    },
+    {
+      "name": "checkboxes valid",
+      "field": {
+        "id": "answer",
+        "type": "checkboxes",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": null,
+      "value": [
+        "first",
+        "second"
+      ]
+    },
+    {
+      "name": "checkboxes duplicate",
+      "field": {
+        "id": "answer",
+        "type": "checkboxes",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": "invalid_checkboxes",
+      "value": [
+        "first",
+        "first"
+      ]
+    },
+    {
+      "name": "checkboxes unknown",
+      "field": {
+        "id": "answer",
+        "type": "checkboxes",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": "invalid_checkboxes",
+      "value": [
+        "no"
+      ]
+    },
+    {
+      "name": "checkboxes required",
+      "field": {
+        "id": "answer",
+        "type": "checkboxes",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": "required",
+      "value": []
+    },
+    {
+      "name": "multiselect valid",
+      "field": {
+        "id": "answer",
+        "type": "multiselect",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": null,
+      "value": [
+        "first",
+        "second"
+      ]
+    },
+    {
+      "name": "multiselect duplicate",
+      "field": {
+        "id": "answer",
+        "type": "multiselect",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": "invalid_multiselect",
+      "value": [
+        "first",
+        "first"
+      ]
+    },
+    {
+      "name": "multiselect unknown",
+      "field": {
+        "id": "answer",
+        "type": "multiselect",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": "invalid_multiselect",
+      "value": [
+        "no"
+      ]
+    },
+    {
+      "name": "multiselect required",
+      "field": {
+        "id": "answer",
+        "type": "multiselect",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          }
+        ]
+      },
+      "expectedCode": "required",
+      "value": []
+    },
+    {
+      "name": "Consent unchecked required",
+      "field": {
+        "id": "answer",
+        "type": "checkbox",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "required",
+      "value": false
+    },
+    {
+      "name": "Consent checked",
+      "field": {
+        "id": "answer",
+        "type": "checkbox",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": true
+    },
+    {
+      "name": "Consent optional",
+      "field": {
+        "id": "answer",
+        "type": "checkbox",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": false
+    },
+    {
+      "name": "Consent string",
+      "field": {
+        "id": "answer",
+        "type": "checkbox",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": "invalid_checkbox",
+      "value": "true"
+    },
+    {
+      "name": "Name complete",
+      "field": {
+        "id": "answer",
+        "type": "structured_name",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": {
+        "first": "Alex",
+        "last": "Morgan"
+      }
+    },
+    {
+      "name": "Name missing part",
+      "field": {
+        "id": "answer",
+        "type": "structured_name",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "invalid_structured_name",
+      "value": {
+        "first": "Alex"
+      }
+    },
+    {
+      "name": "Name unexpected key",
+      "field": {
+        "id": "answer",
+        "type": "structured_name",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      "expectedCode": "invalid_structured_name",
+      "value": {
+        "middle": "A"
+      }
+    },
+    {
+      "name": "Address complete",
+      "field": {
+        "id": "answer",
+        "type": "structured_address",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": null,
+      "value": {
+        "street": "Main",
+        "city": "City",
+        "postalCode": "123",
+        "country": "Example"
+      }
+    },
+    {
+      "name": "Address missing part",
+      "field": {
+        "id": "answer",
+        "type": "structured_address",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": "invalid_structured_address",
+      "value": {
+        "street": "Main"
+      }
+    },
+    {
+      "name": "heading content",
+      "field": {
+        "id": "answer",
+        "type": "heading",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": null
+    },
+    {
+      "name": "paragraph content",
+      "field": {
+        "id": "answer",
+        "type": "paragraph",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": null
+    },
+    {
+      "name": "section content",
+      "field": {
+        "id": "answer",
+        "type": "section",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": null
+    },
+    {
+      "name": "divider content",
+      "field": {
+        "id": "answer",
+        "type": "divider",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": []
+      },
+      "expectedCode": null
+    },
+    {
+      "name": "FC reference FC-1234",
+      "field": {
+        "id": "answer",
+        "type": "custom",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": [],
+        "customType": "demo.reference",
+        "customVersion": 1,
+        "config": {
+          "prefix": "FC"
+        }
+      },
+      "expectedCode": null,
+      "value": "FC-1234"
+    },
+    {
+      "name": "FC reference FC-12",
+      "field": {
+        "id": "answer",
+        "type": "custom",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": [],
+        "customType": "demo.reference",
+        "customVersion": 1,
+        "config": {
+          "prefix": "FC"
+        }
+      },
+      "expectedCode": "invalid_reference",
+      "value": "FC-12"
+    },
+    {
+      "name": "FC reference ",
+      "field": {
+        "id": "answer",
+        "type": "custom",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": [],
+        "customType": "demo.reference",
+        "customVersion": 1,
+        "config": {
+          "prefix": "FC"
+        }
+      },
+      "expectedCode": "required",
+      "value": ""
+    },
+    {
+      "name": "REF reference REF-1234",
+      "field": {
+        "id": "answer",
+        "type": "custom",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": [],
+        "customType": "demo.reference",
+        "customVersion": 1,
+        "config": {
+          "prefix": "REF"
+        }
+      },
+      "expectedCode": null,
+      "value": "REF-1234"
+    },
+    {
+      "name": "REF reference REF-12",
+      "field": {
+        "id": "answer",
+        "type": "custom",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": [],
+        "customType": "demo.reference",
+        "customVersion": 1,
+        "config": {
+          "prefix": "REF"
+        }
+      },
+      "expectedCode": "invalid_reference",
+      "value": "REF-12"
+    },
+    {
+      "name": "REF reference ",
+      "field": {
+        "id": "answer",
+        "type": "custom",
+        "label": "Answer",
+        "description": "",
+        "placeholder": "",
+        "required": true,
+        "options": [],
+        "customType": "demo.reference",
+        "customVersion": 1,
+        "config": {
+          "prefix": "REF"
+        }
+      },
+      "expectedCode": "required",
+      "value": ""
+    }
+  ]
+}
