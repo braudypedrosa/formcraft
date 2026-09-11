@@ -2,7 +2,7 @@
 
 The library owns client interaction. The host owns persistence, access control, transport, authoritative validation, notifications, and retention. A PHP backend can implement this contract without running React or TypeScript.
 
-## Contract v1 — validation API, not a built-in endpoint
+## Submission contract v1
 
 ```json
 {
@@ -28,7 +28,7 @@ Suggested success: HTTP 201 with `{ "ok": true, "submissionId": "..." }`. Sugges
 }
 ```
 
-The core validator now returns structured error codes. Core currently returns plain messages. The renderer accepts `SubmissionError` with field-ID keyed strings or `{ code, message }` objects. Validate the backend response in your host adapter, then throw this error to highlight fields and open the first affected page.
+`validateSubmissionRequest` returns structured error codes. `validateSubmission` returns a field-ID-to-message map. The renderer accepts `SubmissionError` with field-ID keyed strings or `{ code, message }` objects. Validate the backend response in your host adapter, then throw this error to highlight fields and open the first affected page.
 
 ## Server processing order
 

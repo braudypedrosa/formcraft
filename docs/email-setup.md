@@ -1,6 +1,6 @@
 # Email notifications
 
-Formcraft does not send email or expose an email-settings API. Configure notifications in the application receiving submissions. Never put SMTP passwords, API keys, recipients, or email transport configuration into exported form JSON or browser code.
+Connect email notifications through the application receiving Formcraft submissions. The library provides form rendering and validation; your backend controls notification settings and delivery. Never put SMTP passwords, API keys, recipients, or email transport configuration into exported form JSON or browser code.
 
 ## Notification setup
 
@@ -23,7 +23,7 @@ The recommended flow is: validate → save once → enqueue notification → ack
 
 ## WordPress with existing SMTP plugins
 
-1. Install/embed Formcraft through the future integration plugin; the standalone package alone does not provide a WordPress admin screen.
+1. Embed Formcraft in a separate WordPress plugin that provides its admin screen, persistence, and submission endpoint. This plugin is application code; it is not included in the library.
 2. Configure your site's existing SMTP plugin using its own settings, or use the site's configured mail transport. No particular provider is required.
 3. Set an authenticated sender on a domain you control. Configure the provider's DNS records and send a transport test using that plugin.
 4. Configure the notification recipient and allowed field IDs in your integration. Use the visitor's validated email as Reply-To, not as the sender.
@@ -69,4 +69,4 @@ Validate recipient addresses, subject/header safety, and allowed fields when sav
 
 Use your backend's mail service or SMTP client with server environment secrets. Keep its implementation behind an application-owned notification service so changing providers does not change form definitions. Resend is optional, never required. Browser `onSubmit` calls your endpoint; it must not call a credentialed email service directly.
 
-Autoresponders, routing rules, attachments, templates, delivery webhooks, and an email settings UI are future integration features. No live email account has been configured by these examples.
+Autoresponders, routing rules, attachments, templates, delivery webhooks, and an email settings UI are future integration features. Configure and test your own transport before enabling notifications.

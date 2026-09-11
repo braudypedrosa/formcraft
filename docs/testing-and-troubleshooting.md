@@ -8,7 +8,7 @@ pnpm test:consumer
 
 Build produces library JS, declarations, CSS, and the playground. Vitest/Testing Library cover core and React behavior. The consumer check packs and installs packages outside the workspace, including a renderer-only build. Playwright is installed, but do not confuse dependency availability with a complete automated browser suite.
 
-For interaction releases, use the built-in browser to verify toolbox insertion, pointer sorting, deliberate column drops, keyboard focus and move controls, undo/redo, page navigation, mobile editing, schema save/reload, and submit failure/retry. Test multiple embedded instances and host styles. Existing evidence is recorded in [verification](../VERIFICATION.md), [QA audit](../QA-AUDIT.md), and [library verification](../LIBRARY-VERIFICATION.md); these are dated snapshots, not guarantees about future changes.
+For interaction releases, use the built-in browser to verify toolbox insertion, pointer sorting, deliberate column drops, keyboard focus and move controls, undo/redo, page navigation, mobile editing, schema save/reload, and submit failure/retry. Test multiple embedded instances and host styles.
 
 | Symptom | Check |
 | --- | --- |

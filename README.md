@@ -9,7 +9,7 @@ pnpm install
 pnpm dev
 ```
 
-Open `http://127.0.0.1:5173/`. Packages are currently unpublished `0.0.0-prototype` builds. The playground demonstrates embedding and browser-local drafts; it is not a backend.
+Open `http://127.0.0.1:5173/`. Build and consume the packages from this workspace. The playground provides a complete embedding example with browser-local drafts; connect submissions to your application backend.
 
 ## Documentation
 
@@ -49,9 +49,9 @@ pnpm exec tsc -p examples/tsconfig.json
 
 See [testing and troubleshooting](docs/testing-and-troubleshooting.md) for scope and browser checks. After library source edits, run `pnpm build:packages`; `pnpm dev` does not watch library sources automatically.
 
-## Hosted demo and documentation
+## Form builder and documentation
 
-- Demo: https://braudyp.dev/sites/demo/formcraft/
+- Interactive builder: https://braudyp.dev/sites/demo/formcraft/
 - Documentation: https://braudyp.dev/sites/demo/formcraft/docs/
 
 Build for a subfolder after building the libraries:
@@ -62,4 +62,4 @@ pnpm exec tsc --noEmit
 pnpm exec vite build --base=/sites/demo/formcraft/
 ```
 
-Serve the generated `dist/index.html`, `dist/docs/index.html`, assets, and SVG brand files under that same base path. Documentation navigation uses Vite's base URL. The demo stores drafts in the visitor's browser and simulates submissions; it does not send email or store submissions on a server. Library packages remain unpublished.
+Serve the generated `dist/index.html`, `dist/docs/index.html`, assets, and SVG brand files under that same base path. Documentation navigation uses Vite's base URL. The hosted builder stores drafts in the visitor's browser and simulates submissions; it does not send email or store submissions on a server. Install library packages from the source workspace or generated package archives.

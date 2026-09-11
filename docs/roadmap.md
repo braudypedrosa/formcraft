@@ -1,15 +1,23 @@
 # Roadmap
 
-The first two milestones are implemented locally. Remaining items are planned, not release commitments.
+This page describes planned extensions to Formcraft. Use the [API reference](api.md) for the current supported interface; roadmap items are not available APIs or delivery commitments.
 
-1. **Implemented: clearer layout controls.** Field settings now include a relative target, row/column position, row preview, and Apply layout action. Changes use the same placement rules as drag/drop and are undoable.
-2. **Implemented: public controllers.** `useFormRenderer` exposes submission, reset, values, focus, and status through a ref. Structured server field errors, initial values, custom success content, and lifecycle callbacks are available. `useFormBuilder` exposes selection, add, undo/redo, JSON import/export, and state snapshots. See [controller APIs](api.md).
-3. **Implemented: custom field registry.** Instance-local core registrations and separate builder/renderer adapters support custom configuration, click/drag insertion, validation, and JSON round trips. The playground includes a reference-code example. See [custom fields](custom-fields.md).
-4. **Implemented: versioned integration contract.** Version-1 documents migrate to schema version 2 with stable IDs. Contract-v1 requests require a published revision, validate their envelope, reject unknown answer IDs, and return structured codes. TypeScript and a separate PHP reference validator run 71 shared answer cases. This is a validation foundation, not an HTTP backend or universal parser-equivalence guarantee.
-5. **Complete theme and localization APIs.** Replace hardcoded UI strings/colors with documented per-instance configuration and verify multiple hosts/instances.
-6. **Separate notifications adapter.** Build server settings, templates, queues, delivery status, and `wp_mail()` integration in the future plugin/backend package.
-7. **Conditional logic.** Define visibility, requiredness, and hidden-answer submission semantics in both client and server before adding the editor UI.
+## Theme and localization configuration
 
-After these foundations: reusable field presets, choice-list import, calculations, save-and-resume, and uploads. Uploads need backend storage, limits, and validation; they should not be implemented as a browser-only field. Payments and signatures warrant separate integration designs.
+Expand per-instance theme tokens and configurable interface labels across the builder and renderer, with verification in multiple host applications.
 
-Next milestone: full theme/localization configuration and an end-to-end reference backend. The notification adapter and conditional logic remain planned.
+## Notification adapters
+
+Provide a separate server integration for notification settings, templates, queues, delivery status, and WordPress `wp_mail()` support. Email credentials and transport remain server-side.
+
+## Conditional logic
+
+Add shared rules for field visibility, requiredness, and hidden-answer handling across client and server validation before introducing editing controls.
+
+## Additional integrations
+
+Planned areas include reusable field presets, choice-list import, calculations, save-and-resume, and uploads. Upload integrations require backend storage, limits, and validation. Payments and signatures require separate integration designs.
+
+## Available capabilities
+
+Formcraft supports field and layout editing, pages, undo/redo, public controller hooks, custom field adapters, versioned JSON, schema migrations, and structured submission validation. See [fields and layouts](fields-and-layouts.md), [custom fields](custom-fields.md), and [the submission contract](submissions-and-backends.md).

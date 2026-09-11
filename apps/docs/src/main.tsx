@@ -15,8 +15,6 @@ const extras = import.meta.glob(
     "../../../apps/playground/src/custom-fields/*.ts",
     "../../../apps/playground/src/custom-fields/*.tsx",
     "../../../scripts/test-consumer.mjs",
-    "../../../*VERIFICATION.md",
-    "../../../QA-AUDIT.md",
   ],
   { query: "?raw", import: "default", eager: true },
 ) as Record<string, string>;
@@ -183,7 +181,7 @@ function App() {
             </nav>
           )}
           <div className="sidebar-bottom">
-            <span className="version">0.0.0-prototype</span>
+            <span className="version">TypeScript · React</span>
             <a href={base}>
               Open form builder <span aria-hidden="true">↗</span>
             </a>
@@ -247,7 +245,7 @@ function App() {
           </Markdown>
         </article>
         <footer>
-          <span>Formcraft documentation · Prototype</span>
+          <span>Formcraft documentation</span>
           <a href={hrefFor("roadmap.md")}>Implementation roadmap →</a>
         </footer>
         {entry && (
@@ -276,9 +274,9 @@ function App() {
           </a>
         ))}
         <div className="release-note">
-          <strong>Prototype release</strong>
+          <strong>Integration guide</strong>
           <span>
-            Available APIs and proposed features are documented separately.
+            Embed the editor and renderer. Connect your own backend.
           </span>
         </div>
       </aside>

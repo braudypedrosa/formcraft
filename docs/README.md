@@ -1,26 +1,32 @@
 # Formcraft documentation
 
-Formcraft is an embeddable TypeScript library. The playground is a demonstration host; it is not a required application or backend.
+Formcraft is a TypeScript form-building library with a visual React editor, a separate form renderer, and a framework-independent core. Embed the components in your application and connect them to your own persistence and submission services.
 
-1. [Getting started and embedding](getting-started.md)
-2. [Public API reference](api.md)
-3. [Fields, columns, pages, and saved JSON](fields-and-layouts.md)
-4. [Hooks and extensibility](hooks-and-extensibility.md)
-5. [Custom fields](custom-fields.md)
-6. [Submission and backend contract](submissions-and-backends.md)
-7. [Email notifications and WordPress setup](email-setup.md)
-8. [Testing and troubleshooting](testing-and-troubleshooting.md)
-9. [Recommended next features](roadmap.md)
+## Build with Formcraft
 
-## Current release boundary
+1. [Install and embed the components](getting-started.md)
+2. [Explore the public API](api.md)
+3. [Configure fields, columns, and pages](fields-and-layouts.md)
+4. [Control the editor and renderer with hooks](hooks-and-extensibility.md)
+5. [Register custom fields](custom-fields.md)
+6. [Validate and process submissions](submissions-and-backends.md)
+7. [Configure email notifications](email-setup.md)
+8. [Test and troubleshoot integrations](testing-and-troubleshooting.md)
 
-The packages are local, unpublished `0.0.0-prototype` builds. This documentation describes the implemented exports, with proposed contracts explicitly marked.
+## Library architecture
 
-| Available now | Host-owned today | Not implemented yet |
-| --- | --- | --- |
-| Separate React packages and custom field adapters | Schema persistence and transport | Complete theme configuration |
-| 24 built-in types, custom registrations, pages, controllers | Submission storage and transport | Conditional logic |
-| Undo/redo, JSON import/export, versioned validation fixtures | Email notifications, SMTP, queues | Notifications adapter |
-| Async submit, server errors, v1-to-v2 migration | Authentication and spam protection | Full localization |
+| Package | Responsibility |
+| --- | --- |
+| `@formcraft/core` | Form definitions, field registration, schema migration, and submission validation |
+| `@formcraft/builder` | Visual editing, fields and layout, JSON import/export, and undo/redo |
+| `@formcraft/renderer` | Accessible form inputs, validation feedback, pages, and submission states |
 
-The core package has no React or WordPress dependency. The current UI packages require React 19. Other frameworks can consume the core directly or mount a React adapter; native Vue/Svelte UI components are not included.
+The builder and renderer ship separately. Applications that display forms can load the renderer without loading the editor. Form definitions are versioned JSON with stable field IDs; components, callbacks, and credentials stay outside saved definitions.
+
+## Application integration
+
+Your application supplies storage, authentication, submission transport, spam protection, and notifications. Validate submissions against the authoritative saved schema on the server, even when client validation succeeds.
+
+The core has no React or WordPress dependency. The UI packages use React 19. Other frameworks can consume the core directly or mount the React components through an adapter. Native Vue and Svelte components are not included.
+
+See the [roadmap](roadmap.md) for planned additions.
