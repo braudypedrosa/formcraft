@@ -57,7 +57,8 @@ const slug = (s: string) =>
 const headings = [
   ...content.replace(/```[\s\S]*?```/g, "").matchAll(/^## (.+)$/gm),
 ].map((m) => ({ text: m[1], id: slug(m[1]) }));
-const hrefFor = (file: string) => `/docs/?page=${encodeURIComponent(file)}`;
+const base = import.meta.env.BASE_URL;
+const hrefFor = (file: string) => `${base}docs/?page=${encodeURIComponent(file)}`;
 function plain(node: ReactNode): string {
   if (typeof node === "string" || typeof node === "number") return String(node);
   if (Array.isArray(node)) return node.map(plain).join("");
@@ -110,10 +111,10 @@ function App() {
       </a>
       <aside className="sidebar">
         <div className="brand">
-          <a href="/docs/" aria-label="Formcraft documentation">
+          <a href={`${base}docs/`} aria-label="Formcraft documentation">
             <img
               className="brand-logo"
-              src="/brand/formcraft-logo-primary.svg"
+              src={`${base}brand/formcraft-logo-primary.svg`}
               alt="Formcraft"
               width="145"
               height="28"
@@ -183,7 +184,7 @@ function App() {
           )}
           <div className="sidebar-bottom">
             <span className="version">0.0.0-prototype</span>
-            <a href="/">
+            <a href={base}>
               Open form builder <span aria-hidden="true">↗</span>
             </a>
             <p>
@@ -246,7 +247,7 @@ function App() {
           </Markdown>
         </article>
         <footer>
-          <span>Formcraft documentation · Local preview</span>
+          <span>Formcraft documentation · Prototype</span>
           <a href={hrefFor("roadmap.md")}>Implementation roadmap →</a>
         </footer>
         {entry && (
@@ -275,7 +276,7 @@ function App() {
           </a>
         ))}
         <div className="release-note">
-          <strong>Local prototype</strong>
+          <strong>Prototype release</strong>
           <span>
             Available APIs and proposed features are documented separately.
           </span>

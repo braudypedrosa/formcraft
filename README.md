@@ -48,3 +48,18 @@ pnpm exec tsc -p examples/tsconfig.json
 ```
 
 See [testing and troubleshooting](docs/testing-and-troubleshooting.md) for scope and browser checks. After library source edits, run `pnpm build:packages`; `pnpm dev` does not watch library sources automatically.
+
+## Hosted demo and documentation
+
+- Demo: https://braudyp.dev/sites/demo/formcraft/
+- Documentation: https://braudyp.dev/sites/demo/formcraft/docs/
+
+Build for a subfolder after building the libraries:
+
+```sh
+pnpm build:packages
+pnpm exec tsc --noEmit
+pnpm exec vite build --base=/sites/demo/formcraft/
+```
+
+Serve the generated `dist/index.html`, `dist/docs/index.html`, assets, and SVG brand files under that same base path. Documentation navigation uses Vite's base URL. The demo stores drafts in the visitor's browser and simulates submissions; it does not send email or store submissions on a server. Library packages remain unpublished.
